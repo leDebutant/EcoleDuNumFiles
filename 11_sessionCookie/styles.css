@@ -1,0 +1,62 @@
+body{
+	font-family: Helvetica;
+	font-size: 12px;
+}
+
+h1{
+	font-size: 16px;
+}
+
+h2{
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.list{
+	margin-left: 20px;
+	color: #555555;
+}
+
+
+
+form{
+	margin-left: 20px;
+	width: 241px;
+}
+
+form div{
+	margin-bottom: 10px;
+}
+
+form div.submit{
+	text-align: right;
+}
+
+form label{
+	display: inline-block;
+	width: 175px;
+}
+
+form input.entry{
+	display: inline-block;
+	width: 150px;
+	
+	border: 1px solid #666666;
+	padding: 2px 5px;
+}
+
+table{
+	border-collapse: collapse;
+}
+
+table th, table td{
+	padding: 2px 5px;
+}
+
+table tbody td{
+	border: 1px solid #666666;
+}
+
+table tfoot td{
+	padding: 5px;
+}
