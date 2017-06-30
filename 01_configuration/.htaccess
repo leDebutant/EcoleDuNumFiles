@@ -1,0 +1,11 @@
+# Save this file as .htaccess (with a leading dot) in the server
+# document root folder on an Apache server.
+# Configuration directives that set a value are preceded by php_value.
+# Directives that turn a setting on or off are preceded by php_flag.
+
+# php_value error_reporting 32767
+# php_flag display_errors on
+
+# Time zone setting for US West Coast
+
+# php_value date.timezone America/Los_Angeles

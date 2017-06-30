@@ -1,0 +1,27 @@
+<?php
+
+$array = ["Alain","Eric","Jennifer","Paul"];
+
+// Pour ceux qui ont fini
+
+$array = [
+  ["Alain"],
+  "Eric",
+  "Jennifer",
+  "Paul",
+  ["monIndex"=>"test"]
+];
+
+$itemCount = 4;
+
+$i=0;
+while($i<$itemCount){
+    echo $array[$i] . "<br>";
+    $i++;
+}
+
+ ?>
+
+ // afficher les valeurs avec foreach
+ // afficher les valeurs avec un while
+ // afficher les valeurs avec un for
