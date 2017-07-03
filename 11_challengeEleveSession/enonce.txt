@@ -1,0 +1,18 @@
+Challenge:
+
+Vous allez créer un formulaire (dans formulaire.php)
+ avec le nom et le prénom
+des élèves (5 ou 6 dans le cas ou vous optez pour un select)
+-> Vous pouvez créer soit via
+des tags selects soit avec un input ou on insère le nom.
+de meme pour le prenom.
+
+Vous allez le comparer avec un array ou vous stockerez
+le nom des élèves(dans service.php).
+
+Donc en clair Vous introduisez le nom d'un eleve dans
+le formulaire et ce que vous insérez sera comparé à
+l'array.
+
+Ensuite vous renverrez à la page initiale avec une
+notification si l'élève est présent dans l'array.
