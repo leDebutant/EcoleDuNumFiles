@@ -1,16 +1,29 @@
 <?php
 
 include("functions.php");
+$var = "";
+if(isset($_GET['control'])){
+    $var = $_GET['control'];
+}
 
 $students = getAllStudents();
-
 ?>
     <html>
       <head>
         <title>Enregistrement Etudiants</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
+          <style>
+              .red{
+                  color: red;
+              }
+          </style>
       </head>
       <body>
+        <?php if ($var == "success"): ?>
+            <h2 class="red">Elève bien enregistré</h2>
+        <?php else: ?>
+            <h2 class="red">Une erreur s'est produite</h2>
+        <?php endif; ?>
         <h1>Formulaire enregistrement étudiants</h1>
         <h2>Liste d'étudiants</h2>
         <?php if (!empty($students)): ?>
