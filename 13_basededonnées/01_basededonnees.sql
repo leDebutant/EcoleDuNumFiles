@@ -20,6 +20,25 @@ active CHAR(2),
 datecreate DATETIME
 );
 
+/* CREER TABLE COMMANDE */
+CREATE TABLE commande(
+id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+datecommande DATETIME,
+nombreProduit INT(255),
+produitId INT(255),
+userId INT(255),
+
+FOREIGN KEY (userId) REFERENCES user(id)
+);
+
+DROP TABLE commande;
+
+
+INSERT INTO commande (datecommande,nombreProduit,
+libelle,userId)
+VALUES (NOW(),1,'Ecran',6);
+
+
 
 /* INSERER DES INFORMATION DANS UNE TABLE */
 INSERT INTO user (username,email,uPassword,active,datecreate)
