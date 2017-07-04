@@ -28,15 +28,13 @@ $connexion->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 // devant :userId (on aurait pu mettre :marcelId) mais
 // mais nous devons mettre cette même clé dans l'array
 // suivant (dans execute)
-$pdo = $connexion->prepare('SELECT uPassword FROM user WHERE id=:userId AND username=:monUsername');
-$pdo->execute(
-  array(
-    'userId'=>2,
-    'monUsername'=>'apocalypse'
-  ));
-$user = $pdo->fetchAll(PDO::FETCH_ASSOC);
+// $pdo = $connexion->prepare('SELECT * FROM user WHERE id=:userId');
+// $pdo->execute(array('userId'=>2));
+// $user = $pdo->fetchAll(PDO::FETCH_ASSOC);
 
-echo $user[0]['uPassword'];
+
+
+var_dump($user);
 die();
 
 // $pdo = $connexion->prepare('INSERT INTO user SET username=:moi, email=:email, uPassword=:password ');
