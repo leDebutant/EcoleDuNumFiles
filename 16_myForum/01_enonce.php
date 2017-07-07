@@ -11,6 +11,9 @@ avec moi pour que je fasse des révisions. (À la hateur de mes possibilités
 physiques) En effet je ne pourrai peut-être pas revoir dans le détail
 tous les projets. Soyez conscients de ceci.
 
+Conseil: Tout les changements important pensez à faire un (git add --all)
+et un (git commit -m "nom du message")
+
 2) Vous allez utiliser des styles CSS de votre choix. Je vous conseille néanmoins
 bootstrap ou un framework css qui permettent de vous lancer rapidement.
 
@@ -74,3 +77,18 @@ leur pseudo.
 13) Créez une liste des utilisateurs qui sont inscrit également
 
 14) Si vous le pouvez créez une liste d'utilisateur "amis".
+
+
+####################################################
+
+Admin Panel - (Panneau Administrateur) - Si vous avez avancé
+
+1) Les utilisateurs peuvent être également administrateur pour gérer
+le backoffice.
+
+2) Pour ceux qui ont de l'avance faite un panneau administrateur
+avec des statistiques des sujets les plus lus.
+
+3) Une liste des utilisateurs bloqués
+
+4) Statistiques de connections
