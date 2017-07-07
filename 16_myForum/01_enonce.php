@@ -23,10 +23,11 @@ avons vu dans le dossier 15_MVC
 4) Ce projet aura au moins les entités utilisateurs, categories et postes évidemment.
 -Une categories peut contenir plusieurs posts mais un post ne peut avoir qu'une seule
 catégorie.
--Si vous y arriver une entités messages pour des messages privés (pas la peine de faire
+-(pour ceux qui sont avancés)
+Si vous y arriver une entités messages pour des messages privés (pas la peine de faire
 un chat dynamique pensez simple à moins que vous ayez de l'avance). Un message ne peut
 avoir qu'un seul interlocuteur.
--Entités tags si vous y arriver. Les tags peuvent concerner plusieurs postes et un poste
+-(pour ceux qui sont avancés)Entités tags si vous y arriver. Les tags peuvent concerner plusieurs postes et un poste
 peut avoir plusieurs tags.
 -Vous pourrez changer votre base de données selon vos besoins.
 
@@ -44,42 +45,44 @@ n'a pas été déjà inséré en base de données.
 la date d'inscription et ceci est éditable pour l'utilisateur (sauf le pseudo).
  Il faut donc vérifier les restriction qu'on a vu au point 5
  (Si vous êtes trop en retard laisser l'upload de la photo pour
- après).
+ après donc (pour ceux qui sont avancés)).
 
 6) Il nous faut créer des sujet avec des catégories prédéfini. Il nous faut une page "créer un sujet".
 -Le sujet doit avoir un titre
 -Le sujet doit avoir longeur minimum de 20 caractères
 -Le sujet peut avoir une photo (pareil faite ceci si vous avez de l'avance) ou non (en base de données enregistrez juste son chemin d'accès exemple: dans la colonne "path" = "/uploads/maphoto.jpg")
+-Le texte doit avoir une longueur d'au moins 50 charactères
 
 6) Une fois arrivé dans la page accueil il faut voir la liste avec les titres des sujets
 et une partie du contenu avec une mention "...lire" plus à la fin. Il faut également
 Une photo miniature mais la photo n'est pas obligatoire
 (Si vous arrivez ici c'est déjà bien)
 
-
-7) Il faut un système de filtre par sujet
+7) Il faut un système de filtre par CATEGORIES
 
 8) Un système de messagerie (pour ceux qui sont vraiment avancé) avec lequel on peut contacter avec un utilisateur sur un sujet
 précis. (C'est comme une discussion forum mais avec un seul utilisateur)
 
-9) Une barre de recherche. Typiquement sur presque toutes les pages.
+9)(pour ceux qui sont vraiment avancé) Une barre de recherche. Typiquement sur presque toutes les pages.
 
-10) Utilisez des requêtes AJAX si vous êtes en forme sinon des method "post" depuis un formulaire html me vont très bien
+10)(pour ceux qui sont vraiment avancé) Utilisez des requêtes AJAX si vous êtes en forme sinon des method "post" depuis un formulaire html me vont très bien
 
 11) Chaque soumission(requête HTTP) aura son propre service (donc ne les mélangez pas)
 Chaque page aura un css dissocié de l'html (si nécessaire)
 et Chaque page aura son propre js (si nécessaire).
 Car maintenant le but est de coder un peu plus proprement.
 
-12) Créez moi un fichier log qui enregistrera les addresses IP des utilisateur ainsi que
+12)(pour ceux qui sont vraiment avancé) Créez moi un fichier log qui enregistrera les addresses IP des utilisateur ainsi que
 leur pseudo.
 
 13) Créez une liste des utilisateurs qui sont inscrit également
 
-14) Si vous le pouvez créez une liste d'utilisateur "amis".
+14)(pour ceux qui sont vraiment avancé) Si vous le pouvez créez une liste d'utilisateur "amis".
 
 
 ####################################################
+
+TOUT CE BLOQUE: (pour ceux qui sont vraiment avancé)
 
 Admin Panel - (Panneau Administrateur) - Si vous avez avancé
 
