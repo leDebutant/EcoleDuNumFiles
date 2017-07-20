@@ -1,0 +1,31 @@
+/***** TOP DES ERREURS/DIFFICULTÉS LES PLUS COMMUNES ****/
+DANS LE PROJET FORUM!!!
+
+1) Des difficultés à lire les données qu'on a c'est
+à dire les tableaux.
+
+2) Vous programmeurs vous avez du mal à comprendre
+qu'une variable définie dans une page qui est ensuite
+incluse dans un script php peut-être utiliser ailleurs
+dans un autre script php.
+
+3) Les variables doivent avoir une valeur assignée dans le
+contrôleur. Et celle-ci sera réutiliser dans les templates.
+
+4) La structure MVC doit être respectée et par conséquent
+on doit avoir une séparation clair entre la logique dite
+métier (les opérations base de données) fonctions checking
+et la logique template html/css. la jointure est faite par le
+contrôleur.
+
+Donc pas de paté de code dans le templates ni appels en base
+de données depuis les templates!!!
+
+Il faut absolument avoir cette logique implementée.
+
+5) Tout ce qui est templating (html et css) doit rester dans
+les templates le plus possibles et donc pas de html généré
+dans les classes ni les fonctions SVP!!!
+
+
+
