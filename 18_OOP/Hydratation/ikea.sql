@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `product`
+-- Table structure for table `produit`
 --
 
-DROP TABLE IF EXISTS `product`;
+DROP TABLE IF EXISTS `produit`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `product` (
+CREATE TABLE `produit` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) DEFAULT NULL,
   `description` text,
@@ -33,13 +33,13 @@ CREATE TABLE `product` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `product`
+-- Dumping data for table `produit`
 --
 
-LOCK TABLES `product` WRITE;
-/*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'KIVIK','Pelotonnez-vous dans le canapé KIVIK en mousse à mémoire de forme, matériau qui s’adapte aux contours du corps. Pour se détendre, se reposer ou passer de bons moments entre amis. Pas de souci si vous renversez quelque chose : la housse est lavable.',869,'noir'),(2,'KLIPPAN','Le revêtement est facile à nettoyer à l\'aide d\'une éponge humide ou imprégnée de détergent doux.',349,'orange'),(3,'TIMSFORS','Zones de contact couvertes de cuir fleur souple teinté dans la masse de 1,2 mm d\'épaisseur très moelleux et doux au toucher.',999,'noir');
-/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+LOCK TABLES `produit` WRITE;
+/*!40000 ALTER TABLE `produit` DISABLE KEYS */;
+INSERT INTO `produit` VALUES (1,'KIVIK','Pelotonnez-vous dans le canapé KIVIK en mousse à mémoire de forme, matériau qui s’adapte aux contours du corps. Pour se détendre, se reposer ou passer de bons moments entre amis. Pas de souci si vous renversez quelque chose : la housse est lavable.',869,'noir'),(2,'KLIPPAN','Le revêtement est facile à nettoyer à l\'aide d\'une éponge humide ou imprégnée de détergent doux.',349,'orange'),(3,'TIMSFORS','Zones de contact couvertes de cuir fleur souple teinté dans la masse de 1,2 mm d\'épaisseur très moelleux et doux au toucher.',999,'noir');
+/*!40000 ALTER TABLE `produit` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -53,10 +53,10 @@ CREATE TABLE `promotion` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `titre` varchar(255) DEFAULT NULL,
   `pourcentage` int(255) DEFAULT NULL,
-  `product_id` int(255) DEFAULT NULL,
+  `produit_id` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `product_id` (`product_id`),
-  CONSTRAINT `promotion_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
+  KEY `product_id` (`produit_id`),
+  CONSTRAINT `promotion_ibfk_1` FOREIGN KEY (`produit_id`) REFERENCES `produit` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -79,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-21 15:12:42
+-- Dump completed on 2017-07-23 15:43:39
