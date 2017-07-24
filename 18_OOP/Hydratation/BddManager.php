@@ -57,7 +57,75 @@ class BddManager
         }
         return false;
     }
+    /***
+    * dans save(Produit $produit) "Produit"
+    * veut dire qu'on oblige le parametre
+    * à être un objet de la classe Produit
+    */
+    public function saveProduit(Produit $produit){
+        if(empty($produit->getId()) == true ){
+          $this->insertProduit($produit);
+        }else{
+          $this->updateProduit($produit);
+        }
+    }
 
+    public function insertProduit(Produit $produit){
+      $this->getConnexion();
+      $query="INSERT INTO produit SET nom=:nom, description=:description, prix=:prix, couleur=:couleur";
+        $pdo = $this->connexion->prepare($query);
+        $pdo->execute(array(
+            'nom'=>$produit->getNom(),
+            'description' => $produit->getDescription(),
+            'prix'=>$produit->getPrix(),
+            'couleur' => $produit->getCouleur()
+        ));
+        return $pdo->rowCount();
+    }
+
+    public function updateProduit(Produit $produit){
+      $this->getConnexion();
+      $query="UPDATE produit SET nom=:nom, description=:description, prix=:prix, couleur=:couleur WHERE id=:id";
+        $pdo = $this->connexion->prepare($query);
+        $pdo->execute(array(
+            'id' =>$produit->getId(),
+            'nom'=>$produit->getNom(),
+            'description' => $produit->getDescription(),
+            'prix'=>$produit->getPrix(),
+            'couleur' => $produit->getCouleur()
+        ));
+        return $pdo->rowCount();
+    }
+
+    public function deleteProduit(Produit $produit){
+      $this->getConnexion();
+      $query="DELETE FROM produit WHERE id=:id";
+        $pdo = $this->connexion->prepare($query);
+        $pdo->execute(array(
+            'id' =>$produit->getId()
+        ));
+        return $pdo->rowCount();
+    }
+
+    public function getPromotionsByProduit(Produit $produit)
+    {
+        $this->getConnexion();
+        $query = "SELECT * FROM promotion WHERE produit_id=:id";
+        $object = $this->connexion->prepare($query);
+        $object->execute(array(
+            'id'=>$produit->getId()
+        ));
+        $promotions = $object->fetchAll(PDO::FETCH_ASSOC);
+
+        if(!empty($promotions)){
+            $tableauPromotions=[];
+            foreach ($promotions as $tableauDonneesPromotions){
+                $tableauPromotions[] = new Promotion($tableauDonneesPromotions);
+            }
+            return $tableauPromotions;
+        }
+        return false;
+    }
 }
 
  ?>

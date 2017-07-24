@@ -8,6 +8,7 @@ class Produit
   private $description;
   private $prix;
   private $couleur;
+  private $mesPromotions = array();
 
     public function __construct($donnees = array())
     {
@@ -121,6 +122,20 @@ class Produit
                 $this->$method($value);
             }
         }
+    }
+
+    public function save(BddManager $bddManager){
+      //$this tout court sert à passer l'objet lui même
+      $bddManager->saveProduit($this);
+    }
+
+    public function delete(BddManager $bddManager){
+      $bddManager->deleteProduit($this);
+    }
+
+    public function getMesPromotions(BddManager $bddManager){
+        //On va appeler la fonction du bddManager
+        return $bddManager->getPromotionsByProduit($this);
     }
 
 }

@@ -1,0 +1,11 @@
+// Exercice vous devez reproduire ce qu'on a fait avec
+les produits IKEA mais cette fois avec des Voitures.
+Avec les attributs marque; puissance; prix; couleur;
+
+1)Crééz un objet Voiture (n'oubliez pas les setters et les getters) et un objet BddManager qui gère les intéractions avec la base de données.
+2)Incluez ces deux objets dans un index.php d'ou vous ferrez
+les appels.
+3)Créez la base de données avec les colonnes correspondantes.
+4) Rentrez des données manuellement en base de données.
+5) Crééz une méthode getVoitureById() qui rendra un
+objet voiture hydraté (avec les données).
