@@ -6,6 +6,11 @@ include 'Promotion.php';
 
 
 $bdd = new BddManager();
-var_dump($bdd->getProduitById(1));
+// $instanceProduit = $bdd->getProduitById(1);
 
-
+$nouvelObjet = new Produit();
+$nouvelObjet->setNom("Chaise Ikki");
+$nouvelObjet->setDescription("Superchaise au PAM");
+$nouvelObjet->setPrix(50);
+$nouvelObjet->setCouleur("noir");
+$bdd->insertProduit($nouvelObjet); //ceci est le save
