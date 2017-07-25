@@ -124,6 +124,30 @@ class Produit
         }
     }
 
+    /***
+     * @param BddManager $bddManager
+     * Ici je vous poste une version amélliorée de l'hydrateur
+     */
+    public function hydrateV2(array $donneesTableau){
+
+        if(empty($donneesPdo) == false){
+            foreach ($donneesTableau as $key => $value){
+                $newString=$key;
+                if(preg_match("#_#",$key)){
+                    $word = explode("_",$key);
+                    $newString = "";
+                    foreach ($word as $w){
+                        $newString.=ucfirst($w);
+                    }
+                }
+                $method = "set".ucfirst($newString);
+                if(method_exists($this,$method)){
+                    $this->$method($value);
+                }
+            }
+        }
+    }
+
     public function save(BddManager $bddManager){
       //$this tout court sert à passer l'objet lui même
       $bddManager->saveProduit($this);
