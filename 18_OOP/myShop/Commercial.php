@@ -94,6 +94,6 @@ class Commercial
     }
 
     public function save(BddManager $bddManager){
-        return $bddManager->saveCommercialBdd($this);
+        return $bddManager->getCommercialRepository()->saveCommercialBdd($this);
     }
 }

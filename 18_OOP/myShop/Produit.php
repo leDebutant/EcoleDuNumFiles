@@ -110,16 +110,16 @@ class Produit
     }
 
     public function save(BddManager $bddManager){
-        $bddManager->saveProduitBdd($this);
+        $bddManager->getProduitRepository()->saveProduitBdd($this);
     }
 
     public function getMesPromotions(BddManager $bddManager){
         if(empty($this->getId()) == false){
-            $this->mesPromotions = $bddManager->getMesPromotionsFromProduit($this);
+            $this->mesPromotions = $bddManager->getPromotionRepository()->getMesPromotionsFromProduit($this);
         }
     }
 
     public function deleteProduit(BddManager $bddManager){
-        $bddManager->deleteProduit($this);
+        $bddManager->getProduitRepository()->deleteProduit($this);
     }
 }

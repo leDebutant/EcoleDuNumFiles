@@ -97,10 +97,10 @@ class Promotion
     }
 
     public function save(BddManager $bddManager){
-        $bddManager->savePromotionBdd($this);
+        $bddManager->getPromotionRepository()->savePromotionBdd($this);
     }
 
     public function delete(BddManager $bddManager){
-        return $bddManager->deletePromotion($this);
+        return $bddManager->getPromotionRepository()->deletePromotion($this);
     }
 }

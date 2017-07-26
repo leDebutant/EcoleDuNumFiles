@@ -1,17 +1,26 @@
 <?php
+include_once 'Connexion.php';
 include_once 'BddManager.php';
 include_once 'Produit.php';
 include_once 'Promotion.php';
 include_once 'Commercial.php';
+include_once 'ProduitRepository.php';
+include_once 'PromotionRepository.php';
+include_once 'CommercialRepository.php';
 
 $bdd = new BddManager();
-//$produits = $bdd->getAllProduits();
+$repoProduit = $bdd->getProduitRepository();
+//$monProduit = $repoProduit->getProduitByid(1);
 
-//$monProduit = $bdd->getProduitById(1);
+//var_dump($monProduit);
+
+//$repoPromotion = $bdd->getPromotionRepository();
 //$monProduit->getMesPromotions($bdd);
 //$monProduit->deleteProduit($bdd);
-//$monProduit->setCouleur("noir");
+//$monProduit->setCouleur("bleu");
 //$monProduit->save($bdd);
+
+
 
 //var_dump($monProduit);
 
