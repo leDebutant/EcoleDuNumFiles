@@ -100,7 +100,7 @@ class Produit
     }
 
     /**
-     * Value Assigment, les français à mon avis on lancé le terme hydratation
+     * Value Assigment, les français à mon avis ont lancés le terme hydratation
      * Mais c'est assigner des valeurs aux attributs de notre objet.
      *
      * Similaire à ce que vous avez fait dans votre Challenge Note avec Pierre

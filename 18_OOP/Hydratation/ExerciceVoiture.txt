@@ -1,0 +1,26 @@
+Utiliser la structure objet que nous avons vu pour
+
+1)Créer les entités Voiture et Courses.
+
+a) Voiture doit avoir les attributs
+
+marque
+puissance
+prix
+couleur
+
+b) Course
+
+distance
+nbPassagers
+duree
+date_course
+voiture_id
+
+2) Créez les tables correspondantes en base de données.
+Notez que la relation entre Voiture et Course doivent il doit y avoir une contreinte clé.
+
+
+3) Attention: Pour effacer une voiture vous devez être sur que celle-ci n'est pas de courses au
+préalable sinon vous aurez une erreur dû à la contrainte clé.
+
