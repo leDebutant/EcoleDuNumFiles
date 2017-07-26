@@ -43,9 +43,9 @@ class BddManager
 
     public function saveProduitBdd(Produit $produit){
         if(empty($produit->getId())){
-            $this->insertProduct($produit);
+            return $this->insertProduct($produit);
         }else{
-            $this->updateProduct($produit);
+            return $this->updateProduct($produit);
         }
     }
 
@@ -76,15 +76,16 @@ class BddManager
 
     public function savePromotionBdd(Promotion $promotion){
         if(empty($promotion->getId())){
-            $this->insertPromotion($promotion);
+            return $this->insertPromotion($promotion);
         }else{
-            $this->updatePromotion($promotion);
+            return $this->updatePromotion($promotion);
         }
     }
 
     public function deleteProduit(Produit $produit){
 
-        $this->deleteAllPromotionFromProduit($produit);
+        //Avec ON CASCADE DELETE plus besoin de ceci
+        //$this->deleteAllPromotionFromProduit($produit);
 
         $object = $this->connexion->prepare('DELETE FROM produit WHERE id=:id');
         $object->execute(array(
@@ -155,5 +156,41 @@ class BddManager
         return  $object->rowCount();
     }
 
+    public function saveCommercialBdd(Commercial $commercial){
+        if(empty($commercial->getId())){
+            return $this->insertCommercial($commercial);
+        }else{
+            return $this->updateCommercial($commercial);
+        }
+    }
 
+    public function insertCommercial(Commercial $commercial){
+        $query="INSERT INTO commercial SET nom=:nom, telephone=:telephone, promotion_id=:promotionId";
+        $pdo = $this->connexion->prepare($query);
+        $pdo->execute(array(
+            'nom'=>$commercial->getNom(),
+            'telephone' => $commercial->getTelephone(),
+            'promotionId'=>$commercial->getPromotionId()
+        ));
+        return $pdo->rowCount();
+    }
+
+    public function updateCommercial(Commercial $commercial){
+        $query = 'UPDATE commercial SET nom=:nom, telephone=:telephone, promotion_id=:promotionId WHERE id=:id';
+        $pdo = $this->connexion->prepare($query);
+        $pdo->execute(array(
+            'nom'=>$commercial->getTelphone(),
+            'telephone' => $commercial->getTelephone(),
+            'promotionId'=> $commercial->getPromotionId()
+        ));
+        return $pdo->rowCount();
+    }
+
+    public function deleteCommercial(Commercial $commercial){
+        $object = $this->connexion->prepare('DELETE FROM commercial WHERE id=:id');
+        $object->execute(array(
+            'id'=>$commercial->getId()
+        ));
+        return  $object->rowCount();
+    }
 }

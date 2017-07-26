@@ -2,17 +2,18 @@
 include_once 'BddManager.php';
 include_once 'Produit.php';
 include_once 'Promotion.php';
+include_once 'Commercial.php';
 
 $bdd = new BddManager();
 //$produits = $bdd->getAllProduits();
 
-$monProduit = $bdd->getProduitById(1);
-$monProduit->getMesPromotions($bdd);
-$monProduit->deleteProduit($bdd);
+//$monProduit = $bdd->getProduitById(1);
+//$monProduit->getMesPromotions($bdd);
+//$monProduit->deleteProduit($bdd);
 //$monProduit->setCouleur("noir");
 //$monProduit->save($bdd);
 
-var_dump($monProduit);
+//var_dump($monProduit);
 
 
 //$produit = new Produit();
@@ -21,6 +22,13 @@ var_dump($monProduit);
 //$produit->setPrix(999);
 //$produit->setCouleur("vert");
 //$produit->save($bdd);
+
+$commercial = new Commercial();
+$commercial->setNom("Jonathan");
+$commercial->setTelephone("68431266");
+$commercial->setPromotionId(1);
+$commercial->save($bdd);
+
 
 
 

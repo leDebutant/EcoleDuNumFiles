@@ -113,8 +113,6 @@ class Produit
         $bddManager->saveProduitBdd($this);
     }
 
-
-
     public function getMesPromotions(BddManager $bddManager){
         if(empty($this->getId()) == false){
             $this->mesPromotions = $bddManager->getMesPromotionsFromProduit($this);
