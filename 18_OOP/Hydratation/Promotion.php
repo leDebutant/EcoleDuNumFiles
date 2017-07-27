@@ -93,7 +93,7 @@ class Promotion
     }
 
     public function delete(BddManager $bddManager){
-        return $bddManager->deletePromotion($this);
+        return $bddManager->getPromotionRepository()->deletePromotion($this);
     }
 
 

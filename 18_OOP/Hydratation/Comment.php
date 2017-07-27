@@ -116,11 +116,11 @@ class Comment
         }
     }
 
-    public function save($bdd){
-        return $bdd->saveComment($this);
+    public function save(BddManager $bdd){
+        return $bdd->getCommentRepository()->saveComment($this);
     }
 
-    public function delete($bdd){
-
+    public function delete(BddManager $bdd){
+//        return $bdd->getCommentRepository()->deleteComment($this);
     }
 }

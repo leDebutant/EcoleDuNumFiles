@@ -4,9 +4,19 @@ include 'BddManager.php';
 include 'Produit.php';
 include 'Promotion.php';
 include 'Comment.php';
+include 'Connexion.php';
+include 'CommentRepository.php';
+include 'ProduitRepository.php';
+include 'PromotionRepository.php';
 
 
 $bdd = new BddManager();
+$produitRepository = $bdd->getProduitRepository();
+$produit = $produitRepository->getProduitById(1);
+
+var_dump($produit);
+
+//$bdd = new BddManager();
 // $instanceProduit = $bdd->getProduitById(1);
 
 //Insertion
@@ -30,8 +40,8 @@ $bdd = new BddManager();
 //var_dump($instanceProduit->getMesPromotions($bdd));
 
 
-$instanceComment = new Comment();
-$instanceComment->setAuteur("Alfonso");
-$instanceComment->setComment("Super");
-$instanceComment->setPromotionId(1);
-$instanceComment->save($bdd);
+//$instanceComment = new Comment();
+//$instanceComment->setAuteur("Alfonso");
+//$instanceComment->setComment("Super");
+//$instanceComment->setPromotionId(1);
+//$instanceComment->save($bdd);
