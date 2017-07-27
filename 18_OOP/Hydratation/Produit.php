@@ -99,6 +99,10 @@ class Produit
         $this->couleur = $couleur;
     }
 
+    public function setMesPromotions(array $promotions){
+        $this->mesPromotions = $promotions;
+    }
+
     /**
      * Value Assigment, les français à mon avis ont lancés le terme hydratation
      * Mais c'est assigner des valeurs aux attributs de notre objet.

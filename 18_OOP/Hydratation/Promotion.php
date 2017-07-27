@@ -92,6 +92,10 @@ class Promotion
         }
     }
 
+    public function delete(BddManager $bddManager){
+        return $bddManager->deletePromotion($this);
+    }
+
 
     
 }

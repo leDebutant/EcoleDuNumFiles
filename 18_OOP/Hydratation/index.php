@@ -3,6 +3,7 @@
 include 'BddManager.php';
 include 'Produit.php';
 include 'Promotion.php';
+include 'Comment.php';
 
 
 $bdd = new BddManager();
@@ -23,5 +24,14 @@ $bdd = new BddManager();
 // $instanceProduit->setNom("Nouveau nom Meuble");
 // $instanceProduit->save($bdd);
 
-$instanceProduit = $bdd->getProduitById(1);
-var_dump($instanceProduit->getMesPromotions($bdd));
+//$instanceProduit = $bdd->getProduitById(1);
+//$instanceProduit->delete($bdd);
+//var_dump($instanceProduit);
+//var_dump($instanceProduit->getMesPromotions($bdd));
+
+
+$instanceComment = new Comment();
+$instanceComment->setAuteur("Alfonso");
+$instanceComment->setComment("Super");
+$instanceComment->setPromotionId(1);
+$instanceComment->save($bdd);

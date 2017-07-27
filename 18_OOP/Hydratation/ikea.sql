@@ -16,6 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `commercial`
+--
+
+DROP TABLE IF EXISTS `commercial`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `commercial` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) DEFAULT NULL,
+  `telephone` varchar(255) DEFAULT NULL,
+  `promotion_id` int(255) DEFAULT NULL,
+  UNIQUE KEY `id` (`id`),
+  KEY `promotion_id` (`promotion_id`),
+  CONSTRAINT `commercial_ibfk_1` FOREIGN KEY (`promotion_id`) REFERENCES `promotion` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `commercial`
+--
+
+LOCK TABLES `commercial` WRITE;
+/*!40000 ALTER TABLE `commercial` DISABLE KEYS */;
+INSERT INTO `commercial` VALUES (1,'JEFFREY','69316045',2);
+/*!40000 ALTER TABLE `commercial` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `produit`
 --
 
@@ -29,7 +57,7 @@ CREATE TABLE `produit` (
   `prix` int(255) DEFAULT NULL,
   `couleur` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +66,7 @@ CREATE TABLE `produit` (
 
 LOCK TABLES `produit` WRITE;
 /*!40000 ALTER TABLE `produit` DISABLE KEYS */;
-INSERT INTO `produit` VALUES (1,'KIVIK','Pelotonnez-vous dans le canapé KIVIK en mousse à mémoire de forme, matériau qui s’adapte aux contours du corps. Pour se détendre, se reposer ou passer de bons moments entre amis. Pas de souci si vous renversez quelque chose : la housse est lavable.',869,'noir'),(2,'KLIPPAN','Le revêtement est facile à nettoyer à l\'aide d\'une éponge humide ou imprégnée de détergent doux.',349,'orange'),(3,'TIMSFORS','Zones de contact couvertes de cuir fleur souple teinté dans la masse de 1,2 mm d\'épaisseur très moelleux et doux au toucher.',999,'noir');
+INSERT INTO `produit` VALUES (1,'KIVIK','Pelotonnez-vous dans le canapé KIVIK en mousse à mémoire de forme, matériau qui s’adapte aux contours du corps. Pour se détendre, se reposer ou passer de bons moments entre amis. Pas de souci si vous renversez quelque chose : la housse est lavable.',869,'noir'),(2,'KLIPPAN','Le revêtement est facile à nettoyer à l\'aide d\'une éponge humide ou imprégnée de détergent doux.',349,'orange'),(3,'TIMSFORS','Zones de contact couvertes de cuir fleur souple teinté dans la masse de 1,2 mm d\'épaisseur très moelleux et doux au toucher.',999,'noir'),(4,'Nouveau nom Meuble','Superchaise au PAM',50,'noir'),(5,'Chaise Ikki','Superchaise au PAM',50,'noir'),(6,'Chaise Ikki','Superchaise au PAM',50,'noir'),(7,'Chaise Ikki','Superchaise au PAM',50,'noir'),(8,'Chaise Ikki','Superchaise au PAM',50,'noir');
 /*!40000 ALTER TABLE `produit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,7 +84,7 @@ CREATE TABLE `promotion` (
   `produit_id` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `product_id` (`produit_id`),
-  CONSTRAINT `promotion_ibfk_1` FOREIGN KEY (`produit_id`) REFERENCES `produit` (`id`)
+  CONSTRAINT `promotion_ibfk_1` FOREIGN KEY (`produit_id`) REFERENCES `produit` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -79,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-23 15:43:39
+-- Dump completed on 2017-07-26 15:58:48
