@@ -1,9 +1,9 @@
 <?php
 
 
-class ProduitRepository
+class ProduitRepository extends PdoManager
 {
-    private $connexion;
+    protected $connexion;
 
     public function __construct($connexion)
     {
@@ -11,18 +11,14 @@ class ProduitRepository
     }
 
     public function getProduitById($id){
-        $object = $this->connexion->prepare('SELECT *
-        FROM produit WHERE id=:id');
-        $object->execute(array(
-            'id'=>$id
-        ));
-        $produits = $object->fetchAll(PDO::FETCH_ASSOC);
 
+        $query="SELECT * FROM produit WHERE id=:id";
+        $produits = $this->select($query,array( 'id'=>$id ));
+        
         if(!empty($produits)){
             return new Produit($produits[0]);
         }
         return false;
-        //Ici nous sommes en train de passer un tableau!!
     }
 
     /**
@@ -31,12 +27,8 @@ class ProduitRepository
      */
 
     public function getAllProduit(){
-
-        $object = $this->connexion->prepare('SELECT *
-      FROM produit');
-        $object->execute(array());
-        $produits = $object->fetchAll(PDO::FETCH_ASSOC);
-
+        $query="SELECT * FROM produit";
+        $produits = $this->select($query,array());
 
         if(!empty($produits)){
             $tableauProduit=[];

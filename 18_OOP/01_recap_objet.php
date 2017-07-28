@@ -51,6 +51,7 @@ class Fromage
     public $gout = "très mauvais";
     public $couleur = "noir";
     public $poid = "3kg";
+    public static $compteur;
 
 
     public function myMethod(){
@@ -59,6 +60,10 @@ class Fromage
     }
 
     public function insideMethod(){
+
+    }
+
+    public static function methodeStatique(){
 
     }
 
@@ -72,16 +77,18 @@ class Fromage
     }
 }
 
+Fromage::methodeStatique();
+
 /***
  * Important: pour accéder à un attribut depuis l'extérieur
  * de la classe il faut utiliser la variable objet qui est en
  * fait une instance de la classe.
  * L'instance est un exemple de la classe. ici ça sera $fromageInstance.
  */
-$fromageInstance = new Fromage();
-
-var_dump($fromageInstance->gout);
-$fromageInstance->myMethod();
+//$fromageInstance = new Fromage();
+//
+//var_dump($fromageInstance->gout);
+//$fromageInstance->myMethod();
 
 /***
  * La classe en elle-même peut avoir des attributs et des methods
@@ -92,6 +99,11 @@ class Pain
 {
     public static $counter=0;
     public static $poid = "150grs";
+
+    public function __construct()
+    {
+        self::$counter++;
+    }
 
     public static function commanderPain()
     {
@@ -121,10 +133,16 @@ class Pain
  * Depuis l'extérieur on peut accéder à une attributs static
  * avec
  */
-var_dump(Pain::$counter);
+//var_dump(Pain::$counter);
 /**
  * Ici Pain::commanderPain(); on accède à la méthode statique
  */
-Pain::commanderPain();
-echo Pain::montrerAttributStatic();
+//Pain::commanderPain();
+//echo Pain::montrerAttributStatic();
+
+
+$pain1 = new Pain();
+$pain2 = new Pain();
+
+var_dump(Pain::$counter);
 

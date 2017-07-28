@@ -1,6 +1,6 @@
 <?php
 
-class Promotion
+class Promotion extends BaseEntity
 {
     private $id;
     private $titre;
@@ -74,22 +74,6 @@ class Promotion
     public function setProduitId($produitId)
     {
         $this->produitId = $produitId;
-    }
-
-    public function hydrate($donnees)
-    {
-        foreach($donnees as $key => $value)
-        {
-            //ici je rajoute un remplacement des undescore
-            $key = preg_replace("#_#","",$key);
-
-            //donc pour l'index id on met le en majuscule et le
-            // prefix avec "set"
-            $method = "set".ucfirst($key);
-            if(method_exists($this,$method)){
-                $this->$method($value);
-            }
-        }
     }
 
     public function delete(BddManager $bddManager){

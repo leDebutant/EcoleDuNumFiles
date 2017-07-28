@@ -1,0 +1,9 @@
+//Test: Vous allez utilisez la nouvelle structure qu'on a créé avec les repository
+et le BddManager
+
+Reprenez ce que vous avez fait avec les Voiture, Course, Spectateur;
+Spectateur{ nom; date_achat; email; sexe; course_id; }
+
+Pour ce test faite une interface hmtl dans laquelle on peut insérer des voitures en base de données, Un listing voiture, ou l'on puisse effacer les voitures (Ceci dans la même page). Button ou l'on peut aller à l'interface course qui aura
+donc la même structure (insérer, lister, effacer) et consulter le public qui
+assiste.

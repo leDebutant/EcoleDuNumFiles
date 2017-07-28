@@ -1,7 +1,7 @@
 <?php
 //Produit.php
 
-class Produit
+class Produit extends BaseEntity
 {
   private $id;
   private $nom;
@@ -101,55 +101,6 @@ class Produit
 
     public function setMesPromotions(array $promotions){
         $this->mesPromotions = $promotions;
-    }
-
-    /**
-     * Value Assigment, les français à mon avis ont lancés le terme hydratation
-     * Mais c'est assigner des valeurs aux attributs de notre objet.
-     *
-     * Similaire à ce que vous avez fait dans votre Challenge Note avec Pierre
-     * avec un array_push();
-     *
-     * Mais une fonction de la sorte nous évite de tous retapper à chaque fois.
-     */
-    public function hydrate($donnees)
-    {
-        foreach($donnees as $key => $value)
-        {
-            //ici je rajoute un remplacement des undescore
-            $key = preg_replace("#_#","",$key);
-
-            //donc pour l'index id on met le en majuscule et le
-            // prefix avec "set"
-            $method = "set".ucfirst($key);
-            if(method_exists($this,$method)){
-                $this->$method($value);
-            }
-        }
-    }
-
-    /***
-     * @param BddManager $bddManager
-     * Ici je vous poste une version amélliorée de l'hydrateur
-     */
-    public function hydrateV2(array $donneesTableau){
-
-        if(empty($donneesPdo) == false){
-            foreach ($donneesTableau as $key => $value){
-                $newString=$key;
-                if(preg_match("#_#",$key)){
-                    $word = explode("_",$key);
-                    $newString = "";
-                    foreach ($word as $w){
-                        $newString.=ucfirst($w);
-                    }
-                }
-                $method = "set".ucfirst($newString);
-                if(method_exists($this,$method)){
-                    $this->$method($value);
-                }
-            }
-        }
     }
 
     public function save(BddManager $bddManager){

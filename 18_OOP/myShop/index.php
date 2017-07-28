@@ -1,12 +1,17 @@
 <?php
-include_once 'Connexion.php';
-include_once 'BddManager.php';
-include_once 'Produit.php';
-include_once 'Promotion.php';
-include_once 'Commercial.php';
-include_once 'ProduitRepository.php';
-include_once 'PromotionRepository.php';
-include_once 'CommercialRepository.php';
+
+function loadMyClass($class){
+    //Je vérifie que la classe n'a pas été déclarée
+    if(class_exists($class)===false){
+        //Si elle n'est pas déclarée je vérifie qu'elle existe bien dans le dossier "model"
+        //à vous de changer ce dossier par le votre
+        $string = $class.'.php';
+        if(file_exists($string)===true){
+            require $string;
+        }
+    }
+}
+spl_autoload_register('loadMyClass');
 
 $bdd = new BddManager();
 $repoProduit = $bdd->getProduitRepository();
