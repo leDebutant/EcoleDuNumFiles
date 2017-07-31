@@ -1,0 +1,11 @@
+***********   Test Flight  ************
+Nous allons créer avec le Framework Flight une page
+d'accueil d'un magasin informatique. La page d'accueil
+doit avoir une barre de menu qui contient des liens
+vers d'autres pages. About / Contact / Description de la
+boite / accueil.
+
+Dans la page contact il faut pouvoir soumettre des coordonnées qui seront affichés dans la page d'accueil
+via une session (pas de base de données).
+
+Si vous avez fini vous pourrez partir!
