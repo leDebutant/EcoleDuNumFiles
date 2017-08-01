@@ -1,0 +1,19 @@
+Pour cette après midi vous allez devenir des testeurs de l'enfer.
+
+Vous allez créer un registerService.php
+(qui va dans model). Ce service doit tester un enregistrement d'utilisateur.
+1) Vous devez vérifier que tous les champs sont complets (ou pas...).
+2) Vérifier que le username a entre 8 et 16 charactères
+3) Vérifier que le password a entre 8 et 16 charactères aussi
+4) Que le mot de passe match avec la confirmation du mot de passe
+5) Que l'email est bien écrit (faite un regex...)
+6) Vérifier que le username n'est pas déjà pris en base
+de données
+7) Vérifier que l'email n'est pas déjà utilisé
+8) Enfin vérifier l'enregistrement en base de données
+
+9) Evidemment créez le test unitaire que testera toutes ces demandes.
+s
+Le délégué insiste que si vous ne finissez pas vous
+venez demain matin. Si vous finissez avant vous pouvez
+partir!!!

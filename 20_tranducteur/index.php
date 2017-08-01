@@ -26,5 +26,27 @@ Flight::route('/traductionService', function(){
     Flight::redirect('formulaire');
 });
 
+
+//Ceci représente une page ou un service
+Flight::route('/nom',function(){
+
+    Flight::render('nom',array());
+});
+
+ //Ceci représente une page ou un service
+Flight::route('/nomService',function(){
+
+    Flight::redirect('/nom');  //header('location:...');
+});
+
+
+
+
+
+
+
+
+
+
 Flight::start();
 ?>
