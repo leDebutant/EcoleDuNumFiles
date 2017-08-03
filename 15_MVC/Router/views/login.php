@@ -1,6 +1,6 @@
 <?= $header ?>
 
-<h2>Login</h2>
+<h2><?= $carte->getTitre() ?></h2>
 <p>
     Connectez-vous
 </p>

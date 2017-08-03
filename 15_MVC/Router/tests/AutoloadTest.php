@@ -37,7 +37,7 @@ class AutoloadTest extends PHPUnit_Framework_TestCase
     // Check autoload failure
     function testMissingClass(){
         $test = null;
-        $this->app->register('test', 'NonExistentClass');
+        $this->app->register('tests', 'NonExistentClass');
 
         if (class_exists('NonExistentClass')) {
             $test = $this->app->test();

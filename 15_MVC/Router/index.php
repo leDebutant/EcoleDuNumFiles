@@ -4,15 +4,18 @@ require 'flight/Flight.php';
 require 'autoloader.php';
 
 Flight::render('header', array('heading' => 'Hello'), 'header');
-Flight::render('footer', array('test' => 'World'), 'footer');
+Flight::render('footer', array('tests' => 'World'), 'footer');
 
 Flight::route('/', function(){
     echo 'hello world!';
 });
 
 Flight::route('/login', function(){
-
-    Flight::render('login',array());
+    $promotion = new Promotion();
+    $promotion->setTitre("Radeon");
+    Flight::render('login',array(
+        'carte' => $promotion
+    ));
 });
 
 Flight::route('POST /newProductService',function(){
@@ -27,7 +30,12 @@ Flight::route('POST /newProductService',function(){
     var_dump($couleur);
 
 //    $bdd = new BddManager();
-//    Flight::redirect('login');
+    //Pour les messages d'erreurs et feedback
+    //utilisez le bon vieux $_GET et ses paramètres dans l'URL
+    //
+    Flight::redirect('login?erreur=1');
+    //Remarques les variables globales restent accessibles
+    // $_GET, $_POST
 });
 
 

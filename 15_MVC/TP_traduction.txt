@@ -1,0 +1,15 @@
+/************************************************
+********   SELECTEUR DE LANGUE ***************
+****************************************
+
+   ->>> QUAND JE DIS TRADUCTEUR JE DIS SURTOUT PAS GOOGLE
+    TRANSLATE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Vous êtes sensés afficher 3 bloques distincts de texte
+avec un formulaire select et selon la langue sélectionnée
+dans se select on aura ces 3 bloques dans une langues
+ou une autre.
+
+LES BLOQUES DOIVENT ETRE INDÉPENDANTS
+
+UTILISEZ FLIGHT

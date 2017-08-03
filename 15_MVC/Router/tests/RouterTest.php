@@ -131,10 +131,10 @@ class RouterTest extends PHPUnit_Framework_TestCase
 
     // Passing URL parameters matched with regular expression
     function testRegExParameters(){
-        $this->router->map('/test/@name:[a-z]+', function($name){
+        $this->router->map('/tests/@name:[a-z]+', function($name){
             echo $name;
         });
-        $this->request->url = '/test/abc';
+        $this->request->url = '/tests/abc';
 
         $this->check('abc');
     }

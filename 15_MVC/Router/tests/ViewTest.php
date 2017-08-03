@@ -23,16 +23,16 @@ class ViewTest extends PHPUnit_Framework_TestCase
 
     // Set template variables
     function testVariables() {
-        $this->view->set('test', 123);
+        $this->view->set('tests', 123);
 
-        $this->assertEquals(123, $this->view->get('test'));
+        $this->assertEquals(123, $this->view->get('tests'));
 
-        $this->assertTrue($this->view->has('test'));
+        $this->assertTrue($this->view->has('tests'));
         $this->assertTrue(!$this->view->has('unknown'));
 
-        $this->view->clear('test');
+        $this->view->clear('tests');
 
-        $this->assertEquals(null, $this->view->get('test'));
+        $this->assertEquals(null, $this->view->get('tests'));
     }
 
     // Check if template files exist

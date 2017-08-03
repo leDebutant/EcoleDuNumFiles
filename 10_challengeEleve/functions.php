@@ -2,7 +2,7 @@
 
 
 function connexion(){
-    $connexion = new PDO('mysql:host=localhost;dbname=test;charset=UTF8','root','');
+    $connexion = new PDO('mysql:host=localhost;dbname=tests;charset=UTF8','root','');
     $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $connexion->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     return $connexion;
