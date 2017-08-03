@@ -58,8 +58,13 @@ class loginService
     }
 
 
-
-
+    /***
+     * @return array|bool
+     * Le but de ce contrôle est de pouvoir cumuler toutes les erreurs dans un même array
+     * et non d'en avoir qu'une. On inscrira donc dans l'attribut $this->error tous les conditions
+     * qui ne sont pas remplies. pour que l'utilisateur puisse savoir ce qui ne vas pas. Et en une seule
+     * fois.
+     */
 
     public function launchControls(){
         //$this->params['username'] represente ici un $_POST['username']
@@ -84,7 +89,9 @@ class loginService
 
 
     /***
-     * Il est évident que cette fonction ne va pas ici!!!!
+     * Il est évident que cette fonction ne va pas ici!!!! Car c'est un appel en base de données
+     * Il faudrait plutôt mettre ça dans un repository ou un BddManager. En tout cas l'objet dédié à l'appel
+     * en base de données.
      */
     public function checkUsernamePassword(){
 
