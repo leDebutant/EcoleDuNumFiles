@@ -1,0 +1,36 @@
+#main {width:1000px; margin:0 auto; position:relative;}
+
+#header {height:285px; background:url(images/header-bg.jpg) no-repeat left top;}
+#header, #content, #footer { font-size:0.75em;}
+
+.col-1, .col-2, .col-3 { float:left;}
+
+/*======= home.html =======*/
+#page1 #content .col-1 {width:250px; margin-right:20px;}
+#page1 #content .col-2 { width:650px;}
+
+/*======= about-us.html =======*/
+#page2 #content .col-1 {width:250px; margin-right:20px;}
+#page2 #content .col-2 { width:650px;}
+
+/*======= articles.html =======*/
+#page3 #content .col-1 {width:250px; margin-right:20px;}
+#page3 #content .col-2 { width:650px;}
+
+/*======= article.html =======*/
+#page4 #content .col-1 {width:250px; margin-right:20px;}
+#page4 #content .col-2 { width:650px;}
+
+/*======= contact-us.html =======*/
+#page5 #content .col-1 {width:250px; margin-right:20px;}
+#page5 #content .col-2 { width:650px;}
+
+/*======= site-map.html =======*/
+#page6 #content .col-1 {width:250px; margin-right:20px;}
+#page6 #content .col-2 { width:650px;}
+
+
+/*=========================*/
+
+
+#footer {height:89px;}

@@ -1,0 +1,113 @@
+* { margin:0; padding:0;}
+body { background:url(images/tail-top.gif) repeat-x top #fff; font-family:Tahoma, Geneva, sans-serif; font-size:100%; line-height:1em; color:#414141;}
+
+input, textarea, select { font-family:Tahoma, Geneva, sans-serif; font-size:1em;}
+
+object { vertical-align:top;}
+
+.fleft { float:left;}
+.fright { float:right;}
+.clear { clear:both;}
+
+.alignright { text-align:right;}
+.aligncenter { text-align:center;}
+
+.wrapper { width:100%; overflow:hidden;}
+.container { width:100%;}
+
+p { margin:0; padding:0;}
+
+.tail-top-right { position:absolute; right:0; top:0; width:50%; height:285px; background:url(images/tail-top-right.gif) repeat-x right top;}
+
+
+/*==================forms====================*/
+input, select { vertical-align:middle; font-weight:normal;}
+img {border:0; vertical-align:top; text-align:left;}
+
+#contacts-form { clear:right; width:100%; overflow:hidden;}
+#contacts-form fieldset { border:none; float:left; }
+#contacts-form .field { clear:both;}
+#contacts-form label { float:left; width:97px; line-height:18px; padding-bottom:8px; font-weight:bold; color:#4c7cbd;}
+#contacts-form input { width:170px; padding:1px 0 1px 3px; background:url(images/png-bg.png) left top; border:1px solid #d6d6d6; color:#414141; float:left;}
+#contacts-form textarea { width:539px; height:252px; padding:1px 0 1px 3px; background:url(images/png-bg.png) left top; border:1px solid #d6d6d6; color:#414141; margin-bottom:15px; overflow:auto; float:left;}
+
+
+/*==================list====================*/
+ul { list-style:none;}
+
+.site-nav { width:100%; overflow:hidden; padding-top:15px;}
+.site-nav li { float:left; font-weight:bold; border-right:1px solid #d5d5d5; padding:0 73px 4px 73px;}
+.site-nav li a { color:#000;}
+.site-nav li a:hover,
+.site-nav li a.act { 
+	color:#4c7cbd;
+}
+.site-nav li.last { border:0;}
+
+.list li { background:url(images/line.gif) repeat-x bottom; padding-bottom:8px; margin-bottom:6px;}
+.list li span { display:inline-block; padding-left:22px; background:url(images/marker-1.gif) no-repeat left 3px;}
+.list li a { color:#414141;}
+.list li.last { background:none; padding-bottom:0; margin-bottom:0;}
+
+.list1 li { width:100%; overflow:hidden; vertical-align:bottom; padding:3px 0 20px 0;}
+.list1 li img { float:left; margin:-3px 15px 0 0;}
+.list1 li.last { padding-bottom:0;}
+
+.list2 { padding-bottom:15px;}
+.list2 li { padding:0 0 4px 8px; background:url(images/marker-2.gif) no-repeat left 6px;}
+.list2 li a { color:#4c7cbd;}
+.list2 li ul { padding-top:4px; margin-bottom:-4px;}
+.list2 li ul li { padding-left:8px; background:url(images/marker-3.gif) no-repeat left 6px;}
+
+
+
+/*==================other====================*/
+.img-box1 { width:100%; overflow:hidden; padding-top:3px;}
+.img-box1 img { float:left; margin:-3px 15px 0 0;}
+
+.p1 { margin-bottom:14px;}
+
+
+/*==================txt, links, lines, titles====================*/
+a {color:#414141; outline:none;}
+a:hover{text-decoration:none;}
+
+h3 { font-size:1em; color:#4c7cbd; margin-bottom:12px;}
+h3 a { color:#4c7cbd; text-decoration:none;}
+h3 a:hover { text-decoration:underline;}
+
+.link { display:block; float:right; background:url(images/link-bgd.gif) repeat-x top; color:#4c7cbd; font-size:1em; text-decoration:none; line-height:.92em;}
+.link em { display:block; background:url(images/link-left.gif) no-repeat left top;}
+.link b { display:block; background:url(images/link-right.gif) no-repeat right top; padding:5px 21px 6px 21px; font-style:normal;}
+.link:hover { text-decoration:underline;}
+
+.line-hor { border-bottom:1px solid #000; margin:20px 0; overflow:hidden; font-size:0; line-height:0;}
+
+.title { margin-bottom:18px;}
+
+
+/*==================boxes====================*/
+.box { background:#fff; width:100%;}
+.box .border-top {background:url(images/border.gif) repeat-x top;}
+.box .border-bot {background:url(images/border.gif) repeat-x bottom;}
+.box .border-left {background:url(images/border.gif) repeat-y left; width:100%;}
+.box .border-right {background:url(images/border.gif) repeat-y right;}
+.box .inner { padding:30px 30px 40px 31px;}
+
+
+/*header*/
+#header .logo { position:absolute; top:137px; left:55px;}
+
+/*content*/
+#content { padding:20px 40px 0 40px;}
+#content .banner { padding-top:20px;}
+#content .indent { padding:14px 0 0 9px;}
+#content .indent1 { padding-bottom:28px;}
+#content p { line-height:1.17em;}
+
+/*footer*/
+#footer .indent { padding:37px 40px 20px 40px;}
+#footer img { position:relative; top:-4px;}
+#footer a { color:#4c7cbd;}
+
+/*==========================================*/
