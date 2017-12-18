@@ -2,5 +2,3 @@ EXO:
 Crééz 4 dossiers Helpers, Session, Library et Custom. Avec 4 namespace différents. Pour chaque dossiers crééz un fichier du même nom que le dossier ainsi qu'une classe. Crééz une méthode au sein de la classe static et normal.
 
 Appelez les depuis l'index.php (donc crééz celui la aussi à la racine) c'est lui qui se chargera de faire les include!
-
-(Recopiez juste j'ai oublié de vous dire un truc)

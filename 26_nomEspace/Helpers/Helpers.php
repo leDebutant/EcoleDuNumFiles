@@ -6,10 +6,15 @@
  * Time: 09:51
  */
 namespace Helpers;
+use Giraffe\Testing\Alfonso\Session as A;
 
 class Helpers
 {
     public static function testing(){
         echo "testing";
+    }
+
+    public static function otherNameSpace(){
+        A::myStaticMethod();
     }
 }
