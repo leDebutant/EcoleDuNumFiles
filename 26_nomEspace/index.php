@@ -11,9 +11,9 @@ include 'idemLibrary.php';
 include 'myLibrary.php';
 include 'Helpers/Helpers.php';
 
-use Helpers as H;
+use Helpers\Helpers;
 
-H\Helpers::testing();
+Helpers::testing();
 //use myLibrary;
 //use myLibrary;
 
