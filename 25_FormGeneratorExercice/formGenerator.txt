@@ -1,0 +1,83 @@
+***ETAPE 1***
+=============
+
+Vous allez devoir créer un objet qui génère des formulaires.
+Cet objet va devoir fonctionner de la façon suivante:
+
+<?php
+
+$formGenerator = new FormGenerator();
+
+$formGenerator->setFormAttributes('POST','service.php');
+$formGenerator->add('email','email','Email');
+$formGenerator->add('username','text','Username');
+$formGenerator->add('password','password','Password');
+$formGenerator->add('description','textarea','Description');
+$formGenerator->add('submit','button','Submit');
+
+$html = $formGenerator->generate();
+
+print($html);
+
+?>
+
+<form method='POST' action='service.php'>
+	<label>Email</label>
+	<input name='email' type='email' />
+	
+	<label>Username</label>
+	<input name='username' type='text' />
+
+	<label>Password</label>
+	<input name='password' type='password' />
+	
+	<label>Description</label>
+	<textarea></textarea>
+	
+	<button type='submit' >Submit</button>
+</form>
+
+/******   ETAPE 2 ****/
+=======================
+
+Créez une classe FormRegister dans laquelle vous allez mettre toute la construction du formulaire c'est à dire tout les addField qu'on a vu précédemment.
+
+Créez un fichier index si vous ne l'avez pas fait à partir du quel on pourra faire
+
+$FormRegister = new FormRegister();
+$html = $FormRegister->generate();
+print($html);
+
+//et on retrouvera exactement les même résultat.
+
+/***** ETAPE 3 *****/
+====================
+Créez une autre classe FormEdit à partir de laquelle on heritera FormRegister et on pourra rajouter des field et en supprimer. par exemple dans cette classe on pourra faire:
+
+$this->add('age','text','Age');
+$this->remote('username');
+
+Et donc à partir de l'index.php nous aurons
+$FormEdit = new FormEdit();
+$html = $FormEdit->generate();
+print($html);
+
+On aura un html avec les champs hérités avec l'age en plus et le username en moins par exemple.
+
+/***** ETAPE 4 ****/
+Il serait bien de pouvoir hydrater notre formulaire edit pour pouvoir éditer les informations en question
+par exemple:
+
+$FormEdit = new FormEdit(array(
+	'description' => 'Resoudre des problèmes difficiles',
+	'age' => 55
+));
+$html = $FormEdit->generate();
+
+/**** ETAPE 5 ****/
+Faite un généralisation des formulaire FormRegister et FormEdit. C'est à dire créer un classe modelForm à partir de laquelle vous pourrez hériter de FormRegister et FormEdit.	
+
+
+
+
+
