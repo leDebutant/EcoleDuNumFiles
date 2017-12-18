@@ -11,9 +11,12 @@ include 'idemLibrary.php';
 include 'myLibrary.php';
 include 'Helpers/Helpers.php';
 
-use Helpers\Helpers;
+/**
+ * Dans ce "use" le premier Helpers représente le namespace le deuxième est le nom de la classe!!
+ */
+use Helpers\Helpers as alias;
 
-Helpers::testing();
+alias::testing();
 //use myLibrary;
 //use myLibrary;
 
