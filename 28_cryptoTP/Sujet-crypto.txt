@@ -1,0 +1,64 @@
+*****************************************************
+****     Projet Laravel: École du numérique		*****
+*****************************************************
+
+Ce nouveau projet portera sur les crypto-monnaie (crypto-currencies). L'année 2017 a vu une forte hausse des quotations de celles-ci en général.
+Explication simplifiée: Le principe des crypto-monnaie lancé par le créateur du bitcoin est l'existance de comptes que l'on peut créer à volonté sur un réseau et qui eux se partagent toutes les crypto-devises existantes:
+Par exemple (avec des chiffres petits) si 15 bitcoin existent et que 3 comptes détiennent ces bicoins de façon égale, alors on peut dire que un compte détient 5 bitcoins chacun.
+Chaque compte est identifié par un code spéficique généré à travers d'un hashing (clé public + clé privée).
+ATTENTION TOUJOURS POUR SIMPLIFIER: La clé public vous permet de recevoir des cryptos, et la clé privée c'est celle qui vous permet de transférer des fonds. Donc c'est ok d'afficher publiquement la clé public mais il faut garder en secret la clé privé et ce pour chaque compte.
+
+pour être concret vous aurez un quelque chose comme:
+
+Clé public (et donc numero de compte)		valeur
+
+125FjkLP3KEtmgSdeo9TdpeWatJadaMroU        	5.00000000
+1PL48qxYa42ctvAniY2FLRiumuAxVamDuK			5.00000000
+1PoZ8dFbS8HFy22zZPTGBbNUQeG3VuhmTr			5.00000000
+
+à gauche ce sont les clés publiques répresentent des compte et à droite le nombre de devises divisable au 10^(-8).
+
+les clé privées sont utilisés pour crypter les messages passés sur le "réseau". Ces transactions sont affichées dans une liste qui est organisé par block. C'est ce qu'on appel la blockchain. Cette chaine est partagé par un réseau peer to peer (similaire au protocol des torrents et Kazaa ceci évolue au fur et à mesure).
+Ceci est codé en C++ ici https://github.com/bitcoin .
+
+Si jamais on a une transaction alors un code le message avec la clé privée et le network le décode avec la clé publique.
+
+Donc pour simplifier nous allons ignorer la clé privée et juste utiliser la clé publique comme numéro de compte.On va partir du principe que le réseau n'existe que sur notre plateforme individuelle. Donc créer des compte avec un hash aléatoire c'est tout par exemple.
+
+$compte = sha1(rand());
+
+Si jamais le premier compte 125FjkLP3KEtmgSdeo9TdpeWatJadaMroU décide de transférer un bitcoin au troisième 1PoZ8dFbS8HFy22zZPTGBbNUQeG3VuhmTr. alors nous aurons une transaction
+
+Transactions compte sender 	              			compte receiver							amount
+1			 125FjkLP3KEtmgSdeo9TdpeWatJadaMroU  	1PL48qxYa42ctvAniY2FLRiumuAxVamDuK		1.00000000
+
+
+*** CAHIER DES CHARGES ***
+
+Avant tout crééz un repository EcoleDuNumCoin et incluez les formateurs dans votre projet.
+
+1)Donc on va créer la possibilités aux utilisateurs de pouvoir se logger, délogger, de créer un profil
+2)de créer plusieurs compte bitcoin(Oui un utilisateur peut avoir plusieurs comptes).
+3)On va laisser la possibiliter de virer des cryptos d'un compte à un autre (sans frais pour faire simple à moins que vous soyez chaud).
+Attention ici il s'agit bien de transaction un compte ne peut être débité s'il n'a pas le solde suffisant.
+Attention 2: Si une transaction est crédité dans un compte il faut qu'il soit débité dans l'autre. Pour
+cela il faut utiliser une transaction SQL.
+
+4)Faites de même pour la deuxième monnaie plus importante: l'Etherium.
+5)De convertir les crypto devises en dollars pour simplifier.
+Vous pouvez utiliser la API de coinmarketcap.com voici la page:
+https://api.coinmarketcap.com/v1/ticker/bitcoin/
+
+pour receuillir les données faites
+
+<?php
+
+$jsonData = json_decode(file_get_contents('https://api.coinmarketcap.com/v1/ticker/bitcoin/'));
+
+?>
+
+Ceci vous donnera le prix: price_usd
+
+
+
+
