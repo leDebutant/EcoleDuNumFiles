@@ -13,8 +13,8 @@ pour être concret vous aurez un quelque chose comme:
 Clé public (et donc numero de compte)		valeur
 
 125FjkLP3KEtmgSdeo9TdpeWatJadaMroU        	5.00000000
-1PL48qxYa42ctvAniY2FLRiumuAxVamDuK			5.00000000
-1PoZ8dFbS8HFy22zZPTGBbNUQeG3VuhmTr			5.00000000
+1PL48qxYa42ctvAniY2FLRiumuAxVamDuK          5.00000000
+1PoZ8dFbS8HFy22zZPTGBbNUQeG3VuhmTr          5.00000000
 
 à gauche ce sont les clés publiques répresentent des compte et à droite le nombre de devises divisable au 10^(-8).
 
