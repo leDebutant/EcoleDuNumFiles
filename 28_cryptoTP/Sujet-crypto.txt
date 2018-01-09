@@ -30,7 +30,7 @@ $compte = sha1(rand());
 Si jamais le premier compte 125FjkLP3KEtmgSdeo9TdpeWatJadaMroU décide de transférer un bitcoin au troisième 1PoZ8dFbS8HFy22zZPTGBbNUQeG3VuhmTr. alors nous aurons une transaction
 
 Transactions compte sender 	              			compte receiver							amount
-1			 125FjkLP3KEtmgSdeo9TdpeWatJadaMroU  	1PL48qxYa42ctvAniY2FLRiumuAxVamDuK		1.00000000
+1            125FjkLP3KEtmgSdeo9TdpeWatJadaMroU     1PL48qxYa42ctvAniY2FLRiumuAxVamDuK      1.00000000
 
 
 *** CAHIER DES CHARGES ***
