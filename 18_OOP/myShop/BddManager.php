@@ -19,7 +19,7 @@ class BddManager
     /**
      * @param mixed $produitRepository
      */
-    public function setProduitRepository($produitRepository)
+    public function setProduitRepository(ProduitRepository $produitRepository)
     {
         $this->produitRepository = $produitRepository;
     }
@@ -35,7 +35,7 @@ class BddManager
     /**
      * @param mixed $promotionRepository
      */
-    public function setPromotionRepository($promotionRepository)
+    public function setPromotionRepository(PromotionRepository $promotionRepository)
     {
         $this->promotionRepository = $promotionRepository;
     }
@@ -51,7 +51,7 @@ class BddManager
     /**
      * @param mixed $commercialRepository
      */
-    public function setCommercialRepository($commercialRepository)
+    public function setCommercialRepository(CommercialRepository $commercialRepository)
     {
         $this->commercialRepository = $commercialRepository;
     }
